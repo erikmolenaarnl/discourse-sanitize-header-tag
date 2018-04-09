@@ -3,7 +3,7 @@
 # about: Strips the header markdown conversion
 # version: 0.1
 # author: Joe Buhlig joebuhlig.com
-# url: https://www.github.com/ha-tech/dicourse-sanitize-header-tag
+# url: https://www.github.com/ha-tech/discourse-sanitize-header-tag
 
 module ::PrettyText
   module PrettyTextExtension
