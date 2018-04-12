@@ -8,7 +8,7 @@
 module ::PrettyText
   module PrettyTextExtension
     def markdown(text, opts = {})
-      
+
       if text.start_with?("###### ")
         text.sub! "###### ", "&#35\;&#35\;&#35\;&#35\;&#35\;&#35\; "
       end
@@ -125,7 +125,129 @@ module ::PrettyText
       text.gsub! "\n***  \n", "\n&#42;&#42;&#42;\n"
       text.gsub! "\n**  \n", "\n&#42;&#42;\n"
       text.gsub! "\n*  \n", "\n&#42;\n"
-      
+
+      if text.end_with?("\n-")
+        pattern = "\n-"
+        replacement = "\n&#45;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n--")
+        pattern = "\n--"
+        replacement = "\n&#45;&#45;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n---")
+        pattern = "\n---"
+        replacement = "\n&#45;&#45;&#45;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n----")
+        pattern = "\n----"
+        replacement = "\n&#45;&#45;&#45;&#45;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n-----")
+        pattern = "\n-----"
+        replacement = "\n&#45;&#45;&#45;&#45;&#45;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+
+      if text.end_with?("\n=")
+        pattern = "\n="
+        replacement = "\n&#61;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n==")
+        pattern = "\n=="
+        replacement = "\n&#61;&#61;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n===")
+        pattern = "\n==="
+        replacement = "\n&#61;&#61;&#61;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n====")
+        pattern = "\n===="
+        replacement = "\n&#61;&#61;&#61;&#61;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n=====")
+        pattern = "\n====="
+        replacement = "\n&#61;&#61;&#61;&#61;&#61;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+
+      if text.end_with?("\n_")
+        pattern = "\n_"
+        replacement = "\n&#95;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n__")
+        pattern = "\n__"
+        replacement = "\n&#95;&#95;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n___")
+        pattern = "\n___"
+        replacement = "\n&#95;&#95;&#95;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n____")
+        pattern = "\n____"
+        replacement = "\n&#95;&#95;&#95;&#95;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n_____")
+        pattern = "\n_____"
+        replacement = "\n&#95;&#95;&#95;&#95;&#95;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n*")
+        pattern = "\n*"
+        replacement = "\n&#42;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n**")
+        pattern = "\n**"
+        replacement = "\n&#42;&#42;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n***")
+        pattern = "\n***"
+        replacement = "\n&#42;&#42;&#42;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n****")
+        pattern = "\n****"
+        replacement = "\n&#42;&#42;&#42;&#42;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
+      if text.end_with?("\n*****")
+        pattern = "\n*****"
+        replacement = "\n&#42;&#42;&#42;&#42;&#42;"
+        text = text.reverse.sub(pattern.reverse, replacement.reverse).reverse
+      end
+
       original = super(text, opts)
 
       original
