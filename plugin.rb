@@ -1,7 +1,7 @@
 # name: discourse-sanitize-header-tag
 # author: Joe Buhlig
 # about: Strips the header markdown conversion
-# version: 0.1
+# version: 0.1.1
 # author: Joe Buhlig joebuhlig.com
 # url: https://www.github.com/ha-tech/discourse-sanitize-header-tag
 
