@@ -4,10 +4,6 @@ export function setup(helper) {
   });
 
   helper.registerPlugin(md => {
-    ["heading", "lheading"].forEach((i) => {
-      md.block.ruler.at(i, () => {
-        //noop
-      });
-    });
+    md.block.ruler.disable(["heading", "lheading"]);
   });
 }
